@@ -53,7 +53,7 @@ h3 { line-height: 1.2; }
 .hero-media {
   position: relative;
   background: #fff;
-  padding: 2px;
+  padding: 8px;
   border: 3px solid var(--orange);
   box-shadow: 0 25px 65px rgba(24,47,75,.24);
 }
@@ -232,4 +232,47 @@ h3 { line-height: 1.2; }
   }
 
   .quality-photo img,.sustainability-grid > img { height: 330px; }
+}
+
+
+/* FINAL HERO IMAGE OVERRIDE
+   Keep the factory photo rectangular and reveal the maximum image area. */
+.hero .hero-grid .hero-media {
+  position: relative !important;
+  overflow: visible !important;
+  clip-path: none !important;
+  border: 2px solid var(--orange) !important;
+  background: #fff !important;
+  padding: 6px !important;
+}
+
+.hero .hero-grid .hero-media::before,
+.hero .hero-grid .hero-media::after {
+  content: none !important;
+  display: none !important;
+  clip-path: none !important;
+}
+
+.hero .hero-grid .hero-media img {
+  display: block !important;
+  width: 100% !important;
+  height: 455px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  clip-path: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: #fff !important;
+}
+
+@media (max-width: 540px) {
+  .hero .hero-grid .hero-media {
+    padding: 5px !important;
+  }
+
+  .hero .hero-grid .hero-media img {
+    height: 320px !important;
+    object-fit: contain !important;
+    clip-path: none !important;
+  }
 }
